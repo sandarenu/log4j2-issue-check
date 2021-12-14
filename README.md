@@ -36,11 +36,10 @@ is not running in my machine.
 
 ## Temporary Fix
 
-If the `log4j-core` version is `>=2.10` by adding following JVM parameter this JNDI lookup can be disabled.
+You can update the `log4j2.xml` by adding `{nolookups}` to the log pattern.
 
-```
--Dlog4j2.formatMsgNoLookups=true
-```
+* Original `%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level [%X{trxid}] %c{1} [%t] - %msg %n`
+* Updated `%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level [%X{trxid}] %c{1} [%t] - %msg{nolookups} %n`
 
 ## Permanent Fix
 
